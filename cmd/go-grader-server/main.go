@@ -14,7 +14,7 @@ func main() {
 
 	logger := log.New(os.Stdout, "logger: ", log.Lshortfile)
 
-	cfg, err := configs.NewConfig()
+	cfg, err := configs.NewConfig(
 	if err != nil {
 		logger.Fatalf("get config %v", err)
 		os.Exit(1)
