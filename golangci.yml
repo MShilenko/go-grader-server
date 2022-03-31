@@ -1,0 +1,36 @@
+run:
+  timeout: 2m
+  skip-dirs:
+    - vendor
+
+  tests: false
+
+linters-settings:
+  dec-order:
+  - const
+  - var
+  - type
+  - func
+  
+  linters:
+  enable:
+    - deadcode
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - bodyclose
+    - depguard
+    - dupl
+    - goconst
+    - gofmt
+    - goimports
+    - gosec
+    - misspell
+    - nakedret
+    - prealloc
+    - scopelint
+    - unconvert
