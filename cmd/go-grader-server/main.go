@@ -18,7 +18,7 @@ func main() {
 
 	cfg, err := configs.NewConfig()
 	if err != nil {
-		logger.Fatalf("get config %v")
+		logger.Fatalf("get config %v", err)
 		os.Exit(1)
 	}
 
