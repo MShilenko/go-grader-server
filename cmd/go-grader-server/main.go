@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
 	"github.com/MShilenko/go-grader-server/configs"
 	"github.com/MShilenko/go-grader-server/internal/postgre"
+	"github.com/MShilenko/go-grader-server/internal/redis"
 )
 
 func main() {
@@ -32,4 +34,15 @@ func main() {
 		os.Exit(1)
 	}
 	defer pgxConnect.Close()
+
+	redisClient, err := redis.GetRedisClient(cfg)
+	if err != nil {
+		logger.Fatalf("redis start %v", err)
+		os.Exit(1)
+	}
+	defer redisClient.Close()
+}
+
+func sayHello(name string) string {
+	return fmt.Sprintf("Hi %s", name)
 }

@@ -20,13 +20,13 @@ var options = []option{
 	// {"server.http.read_timeout", "int", 40, "server http read timeout"},
 	// {"server.http.write_timeout", "int", 40, "server http write timeout"},
 
-	// {"redis.host", "string", "127.0.0.1", "redis host"},
-	// {"redis.port", "int", 6379, "redis port"},
-	// {"redis.dial_timeout", "int", 10, "redis dial timeout"},
-	// {"redis.read_timeout", "int", 30, "redis read timeout"},
-	// {"redis.write_timeout", "int", 30, "redis write timeout"},
-	// {"redis.pool_size", "int", 10, "redis pool size"},
-	// {"redis.pool_timeout", "int", 30, "redis pool timeout"},
+	{"redis.host", "string", "127.0.0.1", "redis host"},
+	{"redis.port", "int", 6379, "redis port"},
+	{"redis.dial_timeout", "int", 10, "redis dial timeout"},
+	{"redis.read_timeout", "int", 30, "redis read timeout"},
+	{"redis.write_timeout", "int", 30, "redis write timeout"},
+	{"redis.pool_size", "int", 10, "redis pool size"},
+	{"redis.pool_timeout", "int", 30, "redis pool timeout"},
 
 	{"postgres.host", "string", "localhost", "postgres host"},
 	{"postgres.port", "int", 5432, "postgres port"},
@@ -51,15 +51,15 @@ type Config struct {
 	// 		WriteTimeout int `mapstructure:"write_timeout"`
 	// 	}
 	// }
-	// Redis struct {
-	// 	Host         string
-	// 	Port         int
-	// 	DialTimeout  int `mapstructure:"dial_timeout"`
-	// 	ReadTimeout  int `mapstructure:"read_timeout"`
-	// 	WriteTimeout int `mapstructure:"write_timeout"`
-	// 	PoolSize     int `mapstructure:"pool_size"`
-	// 	PoolTimeout  int `mapstructure:"pool_timeout"`
-	// }
+	Redis struct {
+		Host         string
+		Port         int
+		DialTimeout  int `mapstructure:"dial_timeout"`
+		ReadTimeout  int `mapstructure:"read_timeout"`
+		WriteTimeout int `mapstructure:"write_timeout"`
+		PoolSize     int `mapstructure:"pool_size"`
+		PoolTimeout  int `mapstructure:"pool_timeout"`
+	}
 	Postgres struct {
 		Host         string
 		Port         int
