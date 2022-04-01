@@ -14,11 +14,11 @@ func main() {
 	// ctx, cancel := context.WithCancel(context.Background())
 	// defer cancel()
 
-	logger := log.New(os.Stdout, "logger: ", log.Lshortfile
+	logger := log.New(os.Stdout, "logger: ", log.Lshortfile)
 
 	cfg, err := configs.NewConfig()
 	if err != nil {
-		logger.Fatalf("get config %v", err)
+		logger.Fatalf("get config %v")
 		os.Exit(1)
 	}
 
